@@ -7,8 +7,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,11 +16,9 @@ import java.time.LocalDate;
 public class User {
     @Id
     private String username;
-    private String firstname;
-    private String lastname;
-    @Convert(converter = BirthdayConvert.class)
-    @Column(name = "birthday")
-    private Birthday birthday;
+    @AttributeOverride(name = "birthday", column = @Column(name ="birthday"))
+    @Embedded
+    private PersonalInfo personalInfo;
     @Enumerated(EnumType.STRING)
     private Role role;
 }

@@ -11,9 +11,30 @@
         </layout>
     </appender>
 
-    <root>
-        <level value="trace" />
+    <appender name="file" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="hibernate-starter.org"/>
+        <param name="append" value="true"/>
+        <param name="maxFileSize" value="10MB"/>
+        <param name="maxBackupIndex" value="5"/>
+
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="conversionPattern"
+                   value="[%d{yyyy-MM-dd HH:mm:ss}] %p [%c: %L] - %m%n" />
+        </layout>
+
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="All"/>
+        </filter>
+    </appender>
+
+    <logger name="Pegas" additivity="false">
+        <level value="debug" />
         <appender-ref ref="console" />
+    </logger>
+
+    <root>
+        <level value="info" />
+        <appender-ref ref="file" />
     </root>
 
 </log4j:configuration>
