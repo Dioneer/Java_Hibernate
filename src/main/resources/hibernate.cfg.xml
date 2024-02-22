@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--    Postgresql account name  -->
+        <property name="connection.username">postgres</property>
+
+        <!--    Postgresql password  -->
+        <property name="connection.password">123456</property>
+
+        <!--    Postgresql driver  -->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+
+        <!--    Postgresql connectionURL  -->
+        <property name="connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+
+        <!--    Database dialect  -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!--    Display SQL statement  -->
+        <property name="show_sql">true</property>
+
+        <!--    Format SQL statement  -->
+        <property name="format_sql">true</property>
+
+        <!--    Create a database as needed after drop -->
+<!--        <property name="hbm2ddl.auto">create</property>-->
+        <mapping class="Pegas.entity.User"/>
+
+    </session-factory>
+</hibernate-configuration>
