@@ -28,6 +28,9 @@
         <!--    Create a database as needed after drop -->
 <!--        <property name="hbm2ddl.auto">create</property>-->
         <mapping class="Pegas.entity.User"/>
+        <mapping class="Pegas.entity.Company"/>
+        <mapping class="Pegas.entity.Profile"/>
+        <mapping class="Pegas.entity.Chat"/>
 
     </session-factory>
 </hibernate-configuration>
