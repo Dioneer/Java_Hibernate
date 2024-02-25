@@ -3,6 +3,9 @@ package Pegas.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -12,8 +15,9 @@ public class Chat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, name = "chatName")
     private String name;
-
-
+    @Builder.Default
+    @ManyToMany(mappedBy = "chats")
+    private List<User> users = new ArrayList<>();
 }

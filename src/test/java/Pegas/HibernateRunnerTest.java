@@ -2,6 +2,7 @@ package Pegas;
 
 import Pegas.entity.*;
 import Pegas.util.HibernateUtil;
+import org.checkerframework.checker.units.qual.C;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.Test;
@@ -61,6 +62,20 @@ public class HibernateRunnerTest {
             session.save(user);
             profile.setUser(user);
             session.save(profile);
+            session.getTransaction().commit();
+        }
+    }
+    @Test
+    public void checkManyToMany(){
+        try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+            Session session = sessionFactory.openSession()){
+            session.beginTransaction();
+            Chat chat = Chat.builder()
+                    .name("pain")
+                    .build();
+            User user = session.get(User.class, 7);
+            user.addChat(chat);
+            session.save(chat);
             session.getTransaction().commit();
         }
     }
