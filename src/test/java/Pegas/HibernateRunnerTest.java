@@ -52,12 +52,22 @@ public class HibernateRunnerTest {
         connection.close();
     }
     @Test
+    public void checkHQL(){
+        try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+            Session session = sessionFactory.openSession()){
+            session.beginTransaction();
+            var users = session.createQuery("select u from User u").list();
+            System.out.println(users);
+            session.getTransaction().commit();
+        }
+    }
+    @Test
     public void createNewUser(){
         try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
            User user = User.builder()
-                   .username("ivanov126@gk.ru")
+                   .username("ivanov128@gk.ru")
                    .personalInfo(PersonalInfo.builder().firstname("Ivan").lastname("Ivanov")
                            .birthday(new Birthday(LocalDate.of(2011,1,21))).build())
                    .role(Role.User)
@@ -168,15 +178,55 @@ public class HibernateRunnerTest {
             UserChat userChat = UserChat.builder()
                     .chat(chat)
                     .user(user)
-                    .created_at(Instant.now())
-                    .created_by("Andrey")
                     .build();
+            userChat.setCreteAt(Instant.now());
+            userChat.setCreateBy("Maxim");
             userChat.setChat(chat);
             userChat.setUser(user);
             session.persist(userChat);
             session.getTransaction().commit();
         }
     }
+    @Test
+    public void checkH2(){
+        try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+            Session session = sessionFactory.openSession()){
+            session.beginTransaction();
+            User user = session.get(User.class, 3);
+            System.out.println(user);
+            session.getTransaction().commit();
+        }
+    }
+//    @Test
+//    public void checkInheritance(){
+//        try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+//            Session session = sessionFactory.openSession()){
+//            session.beginTransaction();
+//            Company company = Company.builder()
+//                    .nameCompany("Yandex")
+//                    .build();
+//            Programmer programmer =Programmer.builder()
+//                    .username("jj@asd.ru")
+//                    .language(Language.JAVA)
+//                    .company(company)
+//                    .build();
+//            Manager manager = Manager.builder()
+//                    .username("jjj@asd.ru")
+//                    .project("BigBoss")
+//                    .company(company)
+//                    .build();
+//            session.save(company);
+//            session.save(programmer);
+//            session.save(manager);
+//            session.flush();
+//            session.clear();
+//
+//            Programmer programmer1 = session.get(Programmer.class, 1L);
+//            System.out.println(programmer1);
+//            Manager manager1 = session.get(Manager.class, 2L);
+//            session.getTransaction().commit();
+//        }
+//    }
 //    this test commented because functions commented
 //    @Test
 //    public void checkManyToMany(){
