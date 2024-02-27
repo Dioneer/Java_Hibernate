@@ -2,34 +2,127 @@ package Pegas;
 
 import Pegas.entity.*;
 import Pegas.util.HibernateUtil;
-import org.checkerframework.checker.units.qual.C;
+import jakarta.persistence.Column;
+import jakarta.persistence.Table;
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Field;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
+@Slf4j
 public class HibernateRunnerTest {
+//    this test doesn't work because of change
     @Test
-    public void checkOneToMany(){
+    public void testUnderIngine() throws SQLException, IllegalAccessException {
+        User user = User.builder()
+                .username("ivanov125@gk.ru")
+//                .personalInfo(PersonalInfo.builder().firstname("Ivan").lastname("Ivanov")
+//                        .birthday(new Birthday(LocalDate.of(2011,1,21))).build())
+//                .role(Role.User)
+                .build();
+        var sql = """
+                insert into %s (%s) values(%s)
+                """;
+        String userClass = Optional.ofNullable(user.getClass().getAnnotation(Table.class))
+                .map(i->i.schema()+"."+i.name()).orElse(user.getClass().getName());
+        Field[] fields = user.getClass().getDeclaredFields();
+        String userAttr = Arrays.stream(fields).map(i->Optional.ofNullable(i.getAnnotation(Column.class))
+                .map(Column::name)
+                .orElse(i.getName())).collect(Collectors.joining(","));
+        String question = Arrays.stream(fields).map(i->"?").collect(Collectors.joining(","));
+        Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "123456");
+        PreparedStatement preparedStatement = connection.prepareStatement(sql.formatted(userClass, userAttr, question));
+        for(int i = 0; i< fields.length; i++){
+            fields[i].setAccessible(true);
+            preparedStatement.setObject(i+1,fields[i].get(user));
+        }
+        System.out.println(preparedStatement);
+        preparedStatement.execute();
+        connection.close();
+    }
+    @Test
+    public void createNewUser(){
+        try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+            Session session = sessionFactory.openSession()){
+            session.beginTransaction();
+           User user = User.builder()
+                   .username("ivanov126@gk.ru")
+                   .personalInfo(PersonalInfo.builder().firstname("Ivan").lastname("Ivanov")
+                           .birthday(new Birthday(LocalDate.of(2011,1,21))).build())
+                   .role(Role.User)
+                   .build();
+           session.persist(user);
+           session.getTransaction().commit();
+        }
+    }
+    @Test
+    public void updateUser(){
+        try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+            Session session = sessionFactory.openSession()){
+            session.beginTransaction();
+            User user = session.get(User.class, 19);
+            PersonalInfo personalInfo = user.getPersonalInfo();
+            personalInfo.setFirstname("Kirra");
+//            session.update(user);
+            User u = session.merge(user);
+            session.getTransaction().commit();
+        }
+    }
+    @Test
+    public void deleteUser(){
+        try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+            Session session = sessionFactory.openSession()){
+            session.beginTransaction();
+            User user = session.get(User.class, 13);
+            session.remove(user);
+            session.getTransaction().commit();
+        }
+    }
+    @Test
+    public void getOneToMany(){
         try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
         Session session = sessionFactory.openSession()){
             session.beginTransaction();
-            Company company = session.get(Company.class, 18);
+            Company company = session.get(Company.class, 9);
             System.out.println(company.getUsers());
             session.getTransaction().commit();
         }
     }
     @Test
-    public void addNewUserAndCompany(){
+    public void checkManyToOne(){
+        try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+            Session session = sessionFactory.openSession()){
+            session.beginTransaction();
+            Company company = session.get(Company.class, 9);
+            User user = User.builder()
+                    .username("tech03@mail.ru")
+                    .company(company)
+                    .build();
+            session.persist(user);
+            session.getTransaction().commit();
+        }
+    }
+    @Test
+    public void checkOneToMany(){
         try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
             Company company = Company.builder()
-                    .nameCompany("Whooshes")
+                    .nameCompany("Sber")
                     .build();
             User user = User.builder()
-                    .username("ivan1010@mail.ru")
+                    .username("tech03@mail.ru")
+                    .company(company)
                     .build();
             company.addUser(user);
             session.persist(company);
@@ -77,6 +170,9 @@ public class HibernateRunnerTest {
             user.addChat(chat);
             session.save(chat);
             session.getTransaction().commit();
+        }catch (Exception e){
+            log.error("Exception occurred: ", e);
+            throw e;
         }
     }
 }

@@ -14,7 +14,7 @@ import java.util.List;
 @ToString(exclude = {"company", "profile"})
 @Builder
 @Entity
-@EqualsAndHashCode(of = "username")
+@EqualsAndHashCode(of = "username") //получается круг из-за set
 @Table(name = "users", schema = "public")
 public class User {
     @Id
@@ -27,7 +27,8 @@ public class User {
     private PersonalInfo personalInfo;
     @Enumerated(EnumType.STRING)
     private Role role;
-    @ManyToOne(fetch = FetchType.LAZY)
+//    optional меняет left join to inner join
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "company_id")
     private Company company;
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)

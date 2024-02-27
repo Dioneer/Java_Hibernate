@@ -16,7 +16,7 @@ public class PersonalInfo {
     private String firstname;
     private String lastname;
     @Convert(converter = BirthdayConvert.class)
-//    @Column(name = "birthday")
+//    @Column(name = "birthday") in User mapping of this field
     private Birthday birthday;
 
 }

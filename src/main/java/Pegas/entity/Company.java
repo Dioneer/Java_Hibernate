@@ -4,14 +4,13 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Data
-@EqualsAndHashCode(of ="nameCompany")
+@EqualsAndHashCode(of ="nameCompany") //получается круг из-за set
 @ToString(exclude = "users")
 @Entity
 public class Company {
@@ -21,6 +20,7 @@ public class Company {
     @Column(unique = true, nullable = false, name = "nameCompany")
     private String nameCompany;
     @Builder.Default
+    // mappedBy - поле в классе user, а joincolumn - столбец в таблице на который мапимся
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "company", orphanRemoval = true)
     private Set<User> users = new HashSet<>();
 
