@@ -56,7 +56,11 @@ public class HibernateRunnerTest {
         try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
-            var users = session.createQuery("select u from User u").list();
+            var users = session.createQuery("""
+            select u from User u
+            where u.personalInfo.firstname = :firstname
+            """).setParameter("firstname", "Pavel")
+                    .list();
             System.out.println(users);
             session.getTransaction().commit();
         }
@@ -67,8 +71,8 @@ public class HibernateRunnerTest {
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
            User user = User.builder()
-                   .username("ivanov128@gk.ru")
-                   .personalInfo(PersonalInfo.builder().firstname("Ivan").lastname("Ivanov")
+                   .username("ivanov129@gk.ru")
+                   .personalInfo(PersonalInfo.builder().firstname("Pavel").lastname("Ivanov")
                            .birthday(new Birthday(LocalDate.of(2011,1,21))).build())
                    .role(Role.User)
                    .build();
