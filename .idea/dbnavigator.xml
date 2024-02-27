@@ -59,10 +59,13 @@ create table chat(
 id bigserial primary key,
 chatName varchar(64) not null unique
 );
+--drop table users_chat;
 create table users_chat(
+id bigserial primary key,
 user_id bigint references users (id),
 chat_id bigint references chat (id),
-primary key(user_id, chat_id)
+created_at timestamp not null,
+created_by varchar(128) not null
 );]]></console>
     </connection>
   </component>
@@ -71,7 +74,8 @@ primary key(user_id, chat_id)
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" object-ref="schemas/public/tables/company" />
+      <object connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" object-ref="schemas/public/tables/users_chat" />
+      <object connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" object-ref="schemas/public/tables/chat" />
       <object connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" object-ref="schemas/public/tables/users" />
     </open-files>
   </component>

@@ -31,6 +31,7 @@
         <mapping class="Pegas.entity.Company"/>
         <mapping class="Pegas.entity.Profile"/>
         <mapping class="Pegas.entity.Chat"/>
+        <mapping class="Pegas.entity.UserChat"/>
 
     </session-factory>
 </hibernate-configuration>

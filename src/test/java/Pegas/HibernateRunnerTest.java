@@ -14,6 +14,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Optional;
@@ -118,10 +119,10 @@ public class HibernateRunnerTest {
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
             Company company = Company.builder()
-                    .nameCompany("Sber")
+                    .nameCompany("VTB")
                     .build();
             User user = User.builder()
-                    .username("tech03@mail.ru")
+                    .username("tech04@mail.ru")
                     .company(company)
                     .build();
             company.addUser(user);
@@ -134,8 +135,8 @@ public class HibernateRunnerTest {
         try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
-            Company company = session.get(Company.class, 18);
-            company.getUsers().removeIf(i->i.getId().equals(10));
+            Company company = session.get(Company.class, 9);
+            company.getUsers().removeIf(i->i.getId().equals(Long.parseLong(String.valueOf(28))));
             session.getTransaction().commit();
         }
     }
@@ -145,9 +146,8 @@ public class HibernateRunnerTest {
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
             User user = User.builder()
-                    .username("ivan1013@mail.ru")
+                    .username("ivan1028@mail.ru")
                     .build();
-
             Profile profile = Profile.builder()
                     .street("RU")
                     .street("Lenina")
@@ -159,20 +159,40 @@ public class HibernateRunnerTest {
         }
     }
     @Test
-    public void checkManyToMany(){
+    public void checkRoundManyToMany(){
         try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
-            Chat chat = Chat.builder()
-                    .name("pain")
+            User user = session.get(User.class, 26);
+            Chat chat = session.get(Chat.class, 1);
+            UserChat userChat = UserChat.builder()
+                    .chat(chat)
+                    .user(user)
+                    .created_at(Instant.now())
+                    .created_by("Andrey")
                     .build();
-            User user = session.get(User.class, 7);
-            user.addChat(chat);
-            session.save(chat);
+            userChat.setChat(chat);
+            userChat.setUser(user);
+            session.persist(userChat);
             session.getTransaction().commit();
-        }catch (Exception e){
-            log.error("Exception occurred: ", e);
-            throw e;
         }
     }
+//    this test commented because functions commented
+//    @Test
+//    public void checkManyToMany(){
+//        try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+//            Session session = sessionFactory.openSession()){
+//            session.beginTransaction();
+//            Chat chat = Chat.builder()
+//                    .name("pains")
+//                    .build();
+//            User user = session.get(User.class, 30);
+//            user.addChat(chat);
+//            session.save(chat);
+//            session.getTransaction().commit();
+//        }catch (Exception e){
+//            log.error("Exception occurred: ", e);
+//            throw e;
+//        }
+//    }
 }

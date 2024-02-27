@@ -16,7 +16,7 @@ import java.util.Set;
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column(unique = true, nullable = false, name = "nameCompany")
     private String nameCompany;
     @Builder.Default

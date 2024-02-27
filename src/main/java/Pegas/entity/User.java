@@ -28,18 +28,25 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 //    optional меняет left join to inner join
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "company_id")
     private Company company;
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
     private Profile profile;
     @Builder.Default
-    @ManyToMany
-    @JoinTable(name = "users_chat", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "chat_id"))
-    private List<Chat> chats = new ArrayList<>();
+    @OneToMany(mappedBy = "user")
+    private List<UserChat> userChats = new ArrayList<>();
 
-    public void addChat(Chat chat){
-        chats.add(chat);
-        chat.getUsers().add(this);
-    }
+    /**
+     * for ManyToMany
+     */
+//    @Builder.Default
+//    @ManyToMany
+//    @JoinTable(name = "users_chat", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "chat_id"))
+//    private List<Chat> chats = new ArrayList<>();
+//
+//    public void addChat(Chat chat){
+//        chats.add(chat);
+//        chat.getUsers().add(this);
+//    }
 }

@@ -24,6 +24,7 @@ public class Profile {
     public void setUser(User user){
         this.user = user;
         user.setProfile(this);
+        id = user.getId();
     }
 
 }
