@@ -58,8 +58,11 @@ public class HibernateRunnerTest {
             session.beginTransaction();
             var users = session.createQuery("""
             select u from User u
+            join u.company c
             where u.personalInfo.firstname = :firstname
+            and c.nameCompany = :namecompany
             """).setParameter("firstname", "Pavel")
+                    .setParameter("namecompany", "Yandex")
                     .list();
             System.out.println(users);
             session.getTransaction().commit();
@@ -70,12 +73,17 @@ public class HibernateRunnerTest {
         try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
+            Company company = Company.builder()
+                    .nameCompany("Google")
+                    .build();
            User user = User.builder()
-                   .username("ivanov129@gk.ru")
+                   .username("ivanov131@gk.ru")
                    .personalInfo(PersonalInfo.builder().firstname("Pavel").lastname("Ivanov")
                            .birthday(new Birthday(LocalDate.of(2011,1,21))).build())
+                   .company(company)
                    .role(Role.User)
                    .build();
+           session.persist(company);
            session.persist(user);
            session.getTransaction().commit();
         }

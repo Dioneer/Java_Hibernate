@@ -8,6 +8,10 @@ import org.hibernate.engine.internal.Cascade;
 import java.util.ArrayList;
 import java.util.List;
 
+//@NamedQuery(name="findByUserNameandCompany", query = "select u from User u\n" +
+//        "            join u.company c\n" +
+//        "            where u.personalInfo.firstname = :firstname\n" +
+//        "            and c.nameCompany = :namecompany")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
