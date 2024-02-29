@@ -38,6 +38,7 @@
         <mapping class="Pegas.entity.Profile"/>
         <mapping class="Pegas.entity.Chat"/>
         <mapping class="Pegas.entity.UserChat"/>
+        <mapping class="Pegas.entity.Payment"/>
 <!--        <mapping class="Pegas.entity.Programmer"/>-->
 <!--        <mapping class="Pegas.entity.Manager"/>-->
 

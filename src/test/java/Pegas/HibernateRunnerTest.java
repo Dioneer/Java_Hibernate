@@ -10,6 +10,7 @@ import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -73,14 +74,14 @@ public class HibernateRunnerTest {
         try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
-            Company company = Company.builder()
-                    .nameCompany("Google")
-                    .build();
+            Payment payment = session.get(Payment.class,4);
+            Company company = session.get(Company.class,4);
            User user = User.builder()
-                   .username("ivanov131@gk.ru")
-                   .personalInfo(PersonalInfo.builder().firstname("Pavel").lastname("Ivanov")
+                   .username("ivanov138@gk.ru")
+                   .personalInfo(PersonalInfo.builder().firstname("Petr").lastname("Ivanov")
                            .birthday(new Birthday(LocalDate.of(2011,1,21))).build())
                    .company(company)
+                   .payment(payment)
                    .role(Role.User)
                    .build();
            session.persist(company);

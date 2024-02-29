@@ -1,6 +1,5 @@
 package Pegas.entity;
 
-import Pegas.converter.BirthdayConvert;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.engine.internal.Cascade;
@@ -15,7 +14,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(exclude = {"company", "profile"})
+@ToString(exclude = {"company", "profile","payment","userChats"})
 @Builder
 @Entity
 @EqualsAndHashCode(of = "username") //получается круг из-за set
@@ -40,10 +39,13 @@ public class User {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "company_id")
     private Company company;
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "user")
     private Profile profile;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "payment_id")
+    private Payment payment;
     @Builder.Default
-    @OneToMany(mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL, mappedBy = "user")
     private List<UserChat> userChats = new ArrayList<>();
 
     /**

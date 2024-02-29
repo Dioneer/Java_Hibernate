@@ -21,7 +21,7 @@ public class Company {
     private String nameCompany;
     @Builder.Default
     // mappedBy - поле в классе user, а joincolumn - столбец в таблице на который мапимся
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "company", orphanRemoval = true)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "company", orphanRemoval = true)
     private Set<User> users = new HashSet<>();
 
     public void addUser(User user){

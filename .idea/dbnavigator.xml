@@ -26,6 +26,7 @@
 --age int,
 --role varchar(32)
 --);
+--drop table company;
 --drop table users;
 create table company(
     id serial primary key,
@@ -38,7 +39,8 @@ firstname varchar(128),
 lastname varchar(128),
 birthday Date,
 role varchar(32),
-company_id int references company
+company_id int references company,
+payment_id int references payment
 );
 
 --create table profile(
@@ -66,6 +68,11 @@ user_id bigint references users (id),
 chat_id bigint references chat (id),
 created_at timestamp not null,
 created_by varchar(128) not null
+);
+--drop table payment;
+create table payment(
+id bigserial primary key,
+amount numeric(10,2) not null
 );]]></console>
     </connection>
   </component>
@@ -73,7 +80,10 @@ created_by varchar(128) not null
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" object-ref="schemas/public/tables/users" />
+      <object connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" object-ref="schemas/public/tables/payment" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="dddd66d9-3482-4925-89ef-397d4f1add91" />
@@ -88,6 +98,7 @@ created_by varchar(128) not null
     <filter-actions connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" dataset="public.chat" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" dataset="public.my_table1" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" dataset="public.programmer" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" dataset="public.payment" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
