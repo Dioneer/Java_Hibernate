@@ -2,6 +2,7 @@ package Pegas.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.BatchSize;
 import org.hibernate.engine.internal.Cascade;
 
 import java.util.ArrayList;
@@ -11,6 +12,16 @@ import java.util.List;
 //        "            join u.company c\n" +
 //        "            where u.personalInfo.firstname = :firstname\n" +
 //        "            and c.nameCompany = :namecompany")
+@NamedEntityGraph(
+        name="WithCompanyAndChat",
+        attributeNodes = {
+                @NamedAttributeNode("company"),
+                @NamedAttributeNode(value="UserChat", subgraph = "chats")
+        },
+        subgraphs = {
+                @NamedSubgraph(name="chats", attributeNodes = @NamedAttributeNode("chat"))
+        }
+)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -39,6 +50,7 @@ public class User {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "company_id")
     private Company company;
+//    при one to one все время будет идти запрос в профайл. Что бы прекратить, надо его тут закомментить и оставить только в профайле
     @OneToOne(mappedBy = "user")
     private Profile profile;
     @ManyToOne(fetch = FetchType.LAZY)
@@ -46,6 +58,7 @@ public class User {
     private Payment payment;
     @Builder.Default
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL, mappedBy = "user")
+//    @BatchSize(size=5) для уменьшения числа подзапросов
     private List<UserChat> userChats = new ArrayList<>();
 
     /**

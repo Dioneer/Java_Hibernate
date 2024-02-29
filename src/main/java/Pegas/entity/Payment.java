@@ -25,4 +25,9 @@ public class Payment {
     @Builder.Default
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL, mappedBy = "payment", orphanRemoval = true)
     List<User> users = new ArrayList<>();
+
+    public void addUser(User user){
+        users.add(user);
+        user.setPayment(this);
+    }
 }
