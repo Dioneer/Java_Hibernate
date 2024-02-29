@@ -6,8 +6,6 @@ import Pegas.util.HibernateUtil;
 import com.querydsl.core.Tuple;
 import com.querydsl.core.types.Order;
 import com.querydsl.core.types.OrderSpecifier;
-import com.querydsl.core.types.Predicate;
-import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
@@ -18,7 +16,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
+import com.querydsl.core.types.Predicate;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -72,7 +70,7 @@ public class UserDao {
                 .fetch();
     }
     public Double findAveragePaymentAmountByFirstAndLastName(Session session, PaymentFilter filter){
-            List<BooleanExpression> predicates = new ArrayList<>();
+            List<Predicate> predicates = new ArrayList<>();
             if(filter.getFirstName() != null) predicates.add((user.personalInfo.firstname.eq(filter.getFirstName())));
         if(filter.getLastName() != null) predicates.add(user.personalInfo.lastname.eq(filter.getLastName()));
         var predicate = QPredicate.builder()

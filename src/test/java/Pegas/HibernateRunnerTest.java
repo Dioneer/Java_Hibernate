@@ -5,6 +5,7 @@ import Pegas.util.HibernateUtil;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.LockMode;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.Test;
@@ -74,19 +75,67 @@ public class HibernateRunnerTest {
         try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
-            Payment payment = session.get(Payment.class,4);
+            Payment payment = Payment.builder()
+                    .amount(new BigDecimal("5500.25"))
+                    .build();
             Company company = session.get(Company.class,4);
            User user = User.builder()
-                   .username("ivanov138@gk.ru")
+                   .username("ivanov139@gk.ru")
                    .personalInfo(PersonalInfo.builder().firstname("Petr").lastname("Ivanov")
                            .birthday(new Birthday(LocalDate.of(2011,1,21))).build())
                    .company(company)
                    .payment(payment)
                    .role(Role.User)
                    .build();
+            session.persist(payment);
            session.persist(company);
            session.persist(user);
            session.getTransaction().commit();
+        }
+    }
+    @Test
+    public void cache2Level(){
+        User user = null;
+        try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
+            try (Session session = sessionFactory.openSession()) {
+                session.beginTransaction();
+                user = session.find(User.class, 2L);
+                var user1 = session.find(User.class, 2L);
+                session.getTransaction().commit();
+            }
+            try (Session session = sessionFactory.openSession()) {
+                session.beginTransaction();
+                var user2 = session.find(User.class, 2L);
+                session.getTransaction().commit();
+            }
+        }
+    }
+    @Test
+    public void createNewCompany(){
+        try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+            Session session = sessionFactory.openSession()){
+            session.beginTransaction();
+            Company company = session.get(Company.class, 4L, LockMode.OPTIMISTIC);
+//            company.setNameCompany("Onion");
+//            нужен стобец version
+            System.out.println(company);
+            session.getTransaction().commit();
+        }
+    }
+    @Test
+    public void createNewPayment(){
+        try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+            Session session = sessionFactory.openSession()){
+            session.beginTransaction();
+//            для списков, которые редко меняются
+            session.createNativeQuery("SET TRANSACTION READ ONLY;").executeUpdate();
+//            на стороне java организация репидет рид
+            Payment payment = session.get(Payment.class,1L, LockMode.OPTIMISTIC);
+//            payment.setAmount(payment.getAmount().add(BigDecimal.valueOf(15.00)));
+//            Payment theSame = session1.get(Payment.class,1L, LockMode.OPTIMISTIC);
+//            payment.setAmount(payment.getAmount().add(BigDecimal.valueOf(15.00)));
+            System.out.println(payment);
+            session.getTransaction().commit();
         }
     }
     @Test

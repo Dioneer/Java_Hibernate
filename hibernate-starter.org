@@ -1658,3 +1658,627 @@ java.lang.IllegalStateException: Cannot get a connection as the driver manager i
 [2024-02-29 17:29:05] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
 [2024-02-29 17:29:05] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 [2024-02-29 17:29:06] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:34:21] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 19:34:21] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-02-29 19:34:22] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 19:34:22] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 19:34:22] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:34:22] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 19:34:22] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 19:34:22] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 19:34:22] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 19:34:24] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:36:13] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 19:36:13] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-02-29 19:36:14] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 19:36:14] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 19:36:14] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:36:14] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 19:36:14] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 19:36:14] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 19:36:14] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 19:36:16] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:39:13] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 19:39:13] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-02-29 19:39:13] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 19:39:13] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 19:39:13] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:39:13] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 19:39:13] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 19:39:13] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 19:39:14] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 19:39:16] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-02-29 19:39:16] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 145] - SQL Error: 0, SQLState: 42703
+[2024-02-29 19:39:16] ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 150] - ОШИБКА: столбец p1_0.version не существует
+  Позиция: 28
+[2024-02-29 19:39:16] INFO [org.hibernate.event.internal.DefaultLoadEventListener: 117] - HHH000327: Error performing load command
+org.hibernate.exception.SQLGrammarException: JDBC exception executing SQL [select p1_0.id,p1_0.amount,p1_0.version from public.payment p1_0 where p1_0.id=?] [ОШИБКА: столбец p1_0.version не существует
+  Позиция: 28] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:91)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:265)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:167)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:218)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:98)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:180)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:209)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:83)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65)
+	at org.hibernate.loader.ast.internal.SingleIdLoadPlan.load(SingleIdLoadPlan.java:145)
+	at org.hibernate.loader.ast.internal.SingleIdLoadPlan.load(SingleIdLoadPlan.java:117)
+	at org.hibernate.loader.ast.internal.SingleIdEntityLoaderStandardImpl.load(SingleIdEntityLoaderStandardImpl.java:75)
+	at org.hibernate.persister.entity.AbstractEntityPersister.doLoad(AbstractEntityPersister.java:3748)
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:3737)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:604)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromCacheOrDatasource(DefaultLoadEventListener.java:590)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:560)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:544)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:207)
+	at org.hibernate.event.internal.DefaultLoadEventListener.lockAndLoad(DefaultLoadEventListener.java:492)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:112)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:68)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138)
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1222)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:1210)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.load(IdentifierLoadAccessImpl.java:203)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.doLoad(IdentifierLoadAccessImpl.java:160)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.lambda$load$1(IdentifierLoadAccessImpl.java:149)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.perform(IdentifierLoadAccessImpl.java:112)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.load(IdentifierLoadAccessImpl.java:149)
+	at org.hibernate.internal.SessionImpl.get(SessionImpl.java:1139)
+	at Pegas.HibernateRunnerTest.createNewPayment(HibernateRunnerTest.java:98)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: столбец p1_0.version не существует
+  Позиция: 28
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2712)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2400)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:367)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:134)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:246)
+	... 104 more
+[2024-02-29 19:39:16] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:46:38] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 19:46:39] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-02-29 19:46:39] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 19:46:39] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 19:46:39] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:46:39] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 19:46:39] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 19:46:39] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 19:46:39] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 19:46:42] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-02-29 19:46:42] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 145] - SQL Error: 0, SQLState: 42703
+[2024-02-29 19:46:42] ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 150] - ОШИБКА: столбец p1_0.version не существует
+  Позиция: 28
+[2024-02-29 19:46:42] INFO [org.hibernate.event.internal.DefaultLoadEventListener: 117] - HHH000327: Error performing load command
+org.hibernate.exception.SQLGrammarException: JDBC exception executing SQL [select p1_0.id,p1_0.amount,p1_0.version from public.payment p1_0 where p1_0.id=?] [ОШИБКА: столбец p1_0.version не существует
+  Позиция: 28] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:91)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:265)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:167)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:218)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:98)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:180)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:209)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:83)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65)
+	at org.hibernate.loader.ast.internal.SingleIdLoadPlan.load(SingleIdLoadPlan.java:145)
+	at org.hibernate.loader.ast.internal.SingleIdLoadPlan.load(SingleIdLoadPlan.java:117)
+	at org.hibernate.loader.ast.internal.SingleIdEntityLoaderStandardImpl.load(SingleIdEntityLoaderStandardImpl.java:75)
+	at org.hibernate.persister.entity.AbstractEntityPersister.doLoad(AbstractEntityPersister.java:3748)
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:3737)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:604)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromCacheOrDatasource(DefaultLoadEventListener.java:590)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:560)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:544)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:207)
+	at org.hibernate.event.internal.DefaultLoadEventListener.lockAndLoad(DefaultLoadEventListener.java:492)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:112)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:68)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138)
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1222)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:1210)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.load(IdentifierLoadAccessImpl.java:203)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.doLoad(IdentifierLoadAccessImpl.java:160)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.lambda$load$1(IdentifierLoadAccessImpl.java:149)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.perform(IdentifierLoadAccessImpl.java:112)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.load(IdentifierLoadAccessImpl.java:149)
+	at org.hibernate.internal.SessionImpl.get(SessionImpl.java:1139)
+	at Pegas.HibernateRunnerTest.createNewPayment(HibernateRunnerTest.java:98)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: столбец p1_0.version не существует
+  Позиция: 28
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2712)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2400)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:367)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:134)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:246)
+	... 104 more
+[2024-02-29 19:46:42] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:47:22] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 19:47:23] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-02-29 19:47:23] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 19:47:23] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 19:47:23] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:47:23] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 19:47:23] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 19:47:23] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 19:47:23] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 19:47:25] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-02-29 19:47:25] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:50:03] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 19:50:03] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-02-29 19:50:03] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 19:50:03] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 19:50:03] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:50:03] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 19:50:03] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 19:50:03] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 19:50:04] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 19:50:06] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-02-29 19:50:06] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 145] - SQL Error: 0, SQLState: 42703
+[2024-02-29 19:50:06] ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 150] - ОШИБКА: столбец p1_0.version не существует
+  Позиция: 28
+[2024-02-29 19:50:06] INFO [org.hibernate.event.internal.DefaultLoadEventListener: 117] - HHH000327: Error performing load command
+org.hibernate.exception.SQLGrammarException: JDBC exception executing SQL [select p1_0.id,p1_0.amount,p1_0.version from public.payment p1_0 where p1_0.id=?] [ОШИБКА: столбец p1_0.version не существует
+  Позиция: 28] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:91)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:265)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:167)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:218)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:98)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:180)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:209)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:83)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65)
+	at org.hibernate.loader.ast.internal.SingleIdLoadPlan.load(SingleIdLoadPlan.java:145)
+	at org.hibernate.loader.ast.internal.SingleIdLoadPlan.load(SingleIdLoadPlan.java:117)
+	at org.hibernate.loader.ast.internal.SingleIdEntityLoaderStandardImpl.load(SingleIdEntityLoaderStandardImpl.java:75)
+	at org.hibernate.persister.entity.AbstractEntityPersister.doLoad(AbstractEntityPersister.java:3748)
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:3737)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:604)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromCacheOrDatasource(DefaultLoadEventListener.java:590)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:560)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:544)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:207)
+	at org.hibernate.event.internal.DefaultLoadEventListener.lockAndLoad(DefaultLoadEventListener.java:492)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:112)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:68)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138)
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1222)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:1210)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.load(IdentifierLoadAccessImpl.java:203)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.doLoad(IdentifierLoadAccessImpl.java:160)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.lambda$load$1(IdentifierLoadAccessImpl.java:149)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.perform(IdentifierLoadAccessImpl.java:112)
+	at org.hibernate.loader.internal.IdentifierLoadAccessImpl.load(IdentifierLoadAccessImpl.java:149)
+	at org.hibernate.internal.SessionImpl.get(SessionImpl.java:1139)
+	at Pegas.HibernateRunnerTest.createNewPayment(HibernateRunnerTest.java:98)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: столбец p1_0.version не существует
+  Позиция: 28
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2712)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2400)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:367)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:134)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:246)
+	... 104 more
+[2024-02-29 19:50:06] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:54:39] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 19:54:40] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-02-29 19:54:40] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 19:54:40] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 19:54:40] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:54:40] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 19:54:40] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 19:54:40] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 19:54:40] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 19:54:42] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-02-29 19:54:42] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:55:03] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 19:55:03] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-02-29 19:55:03] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 19:55:03] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 19:55:03] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:55:03] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 19:55:03] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 19:55:03] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 19:55:04] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 19:55:05] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-02-29 19:55:06] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:55:34] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 19:55:35] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-02-29 19:55:35] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 19:55:35] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 19:55:35] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 19:55:35] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 19:55:35] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 19:55:35] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 19:55:35] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 19:55:37] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-02-29 19:55:37] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 20:07:28] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 20:07:28] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-02-29 20:07:28] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 20:07:28] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 20:07:28] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 20:07:28] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 20:07:28] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 20:07:28] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 20:07:29] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 20:07:31] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-02-29 20:07:31] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 20:10:08] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 20:10:08] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-02-29 20:10:09] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 20:10:09] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 20:10:09] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 20:10:09] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 20:10:09] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 20:10:09] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 20:10:09] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 20:10:11] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-02-29 20:10:11] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 20:15:31] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 20:16:11] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 20:18:08] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 20:18:08] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-02-29 20:18:08] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 20:18:08] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 20:18:08] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 20:18:08] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 20:18:08] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 20:18:08] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 20:18:09] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 20:18:11] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-02-29 20:18:11] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 20:20:56] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 20:20:57] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-02-29 20:20:57] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 20:20:57] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 20:20:57] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 20:20:57] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 20:20:57] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 20:20:57] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 20:20:57] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 20:20:59] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-02-29 20:20:59] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 20:42:55] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 20:42:56] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-02-29 20:42:56] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 20:42:56] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 20:42:56] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 20:42:56] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 20:42:56] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 20:42:56] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 20:42:56] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 20:42:56] INFO [org.hibernate.envers.boot.internal.EnversServiceImpl: 76] - Envers integration enabled? : true
+[2024-02-29 20:42:57] INFO [org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator: 322] - Adding properties for entity: Pegas.entity.Company
+[2024-02-29 20:42:57] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 20:43:41] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 20:43:41] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-02-29 20:43:42] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 20:43:42] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 20:43:42] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 20:43:42] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 20:43:42] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 20:43:42] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 20:43:42] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 20:43:42] INFO [org.hibernate.envers.boot.internal.EnversServiceImpl: 76] - Envers integration enabled? : true
+[2024-02-29 20:43:43] INFO [org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator: 322] - Adding properties for entity: Pegas.entity.Company
+[2024-02-29 20:43:44] ERROR [org.hibernate.metamodel.internal.MetadataContext: 765] - HHH015007: Illegal argument on static metamodel field injection : org.hibernate.envers.DefaultRevisionEntity_#class_; expected type :  org.hibernate.metamodel.model.domain.internal.EntityTypeImpl; encountered type : jakarta.persistence.metamodel.MappedSuperclassType
+[2024-02-29 20:43:44] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-02-29 20:43:44] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 20:51:43] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 20:51:43] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-02-29 20:51:43] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 20:51:43] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 20:51:43] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 20:51:43] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 20:51:43] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 20:51:43] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 20:51:44] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 20:51:44] INFO [org.hibernate.envers.boot.internal.EnversServiceImpl: 76] - Envers integration enabled? : true
+[2024-02-29 20:51:44] INFO [org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator: 322] - Adding properties for entity: Pegas.entity.Company
+[2024-02-29 20:51:46] ERROR [org.hibernate.metamodel.internal.MetadataContext: 765] - HHH015007: Illegal argument on static metamodel field injection : org.hibernate.envers.DefaultRevisionEntity_#class_; expected type :  org.hibernate.metamodel.model.domain.internal.EntityTypeImpl; encountered type : jakarta.persistence.metamodel.MappedSuperclassType
+[2024-02-29 20:51:46] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-02-29 20:51:46] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 21:27:06] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 21:27:07] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 53] - HHH000025: Second-level cache region factory [org.hibernate.cache.jcache.internal.JCacheRegionFactory]
+[2024-02-29 21:27:07] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 21:27:07] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 21:27:07] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 21:27:07] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 21:27:07] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 21:27:07] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 21:27:08] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 21:27:08] INFO [org.hibernate.envers.boot.internal.EnversServiceImpl: 76] - Envers integration enabled? : true
+[2024-02-29 21:27:08] INFO [org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator: 322] - Adding properties for entity: Pegas.entity.Company
+[2024-02-29 21:27:10] ERROR [org.hibernate.metamodel.internal.MetadataContext: 765] - HHH015007: Illegal argument on static metamodel field injection : org.hibernate.envers.DefaultRevisionEntity_#class_; expected type :  org.hibernate.metamodel.model.domain.internal.EntityTypeImpl; encountered type : jakarta.persistence.metamodel.MappedSuperclassType
+[2024-02-29 21:27:10] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-02-29 21:27:10] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 21:30:58] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 21:30:58] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 53] - HHH000025: Second-level cache region factory [org.hibernate.cache.jcache.internal.JCacheRegionFactory]
+[2024-02-29 21:30:59] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 21:30:59] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 21:30:59] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 21:30:59] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 21:30:59] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 21:30:59] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 21:30:59] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 21:30:59] INFO [org.hibernate.envers.boot.internal.EnversServiceImpl: 76] - Envers integration enabled? : true
+[2024-02-29 21:31:00] INFO [org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator: 322] - Adding properties for entity: Pegas.entity.Company
+[2024-02-29 21:31:00] WARN [org.hibernate.orm.cache: 108] - HHH90001006: Missing cache[Pegas.entity.User] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2024-02-29 21:31:01] INFO [org.ehcache.core.EhcacheManager: 305] - Cache 'Pegas.entity.User' created in EhcacheManager.
+[2024-02-29 21:31:02] ERROR [org.hibernate.metamodel.internal.MetadataContext: 765] - HHH015007: Illegal argument on static metamodel field injection : org.hibernate.envers.DefaultRevisionEntity_#class_; expected type :  org.hibernate.metamodel.model.domain.internal.EntityTypeImpl; encountered type : jakarta.persistence.metamodel.MappedSuperclassType
+[2024-02-29 21:31:02] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-02-29 21:31:02] INFO [org.ehcache.core.EhcacheManager: 216] - Cache 'Pegas.entity.User' removed from EhcacheManager.
+[2024-02-29 21:31:02] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 21:32:19] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 21:32:19] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 53] - HHH000025: Second-level cache region factory [org.hibernate.cache.jcache.internal.JCacheRegionFactory]
+[2024-02-29 21:32:20] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 21:32:20] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 21:32:20] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 21:32:20] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 21:32:20] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 21:32:20] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 21:32:20] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 21:32:20] INFO [org.hibernate.envers.boot.internal.EnversServiceImpl: 76] - Envers integration enabled? : true
+[2024-02-29 21:32:21] INFO [org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator: 322] - Adding properties for entity: Pegas.entity.Company
+[2024-02-29 21:32:21] WARN [org.hibernate.orm.cache: 108] - HHH90001006: Missing cache[Pegas.entity.User] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2024-02-29 21:32:21] INFO [org.ehcache.core.EhcacheManager: 305] - Cache 'Pegas.entity.User' created in EhcacheManager.
+[2024-02-29 21:32:22] ERROR [org.hibernate.metamodel.internal.MetadataContext: 765] - HHH015007: Illegal argument on static metamodel field injection : org.hibernate.envers.DefaultRevisionEntity_#class_; expected type :  org.hibernate.metamodel.model.domain.internal.EntityTypeImpl; encountered type : jakarta.persistence.metamodel.MappedSuperclassType
+[2024-02-29 21:32:22] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2024-02-29 21:32:23] INFO [org.ehcache.core.EhcacheManager: 216] - Cache 'Pegas.entity.User' removed from EhcacheManager.
+[2024-02-29 21:32:23] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 21:33:59] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-02-29 21:34:00] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 53] - HHH000025: Second-level cache region factory [org.hibernate.cache.jcache.internal.JCacheRegionFactory]
+[2024-02-29 21:34:00] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-02-29 21:34:00] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-02-29 21:34:00] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-02-29 21:34:00] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-02-29 21:34:00] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-02-29 21:34:00] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-02-29 21:34:01] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-02-29 21:34:01] INFO [org.hibernate.envers.boot.internal.EnversServiceImpl: 76] - Envers integration enabled? : true
+[2024-02-29 21:34:01] INFO [org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator: 322] - Adding properties for entity: Pegas.entity.Company
+[2024-02-29 21:34:02] WARN [org.hibernate.orm.cache: 108] - HHH90001006: Missing cache[Pegas.entity.User] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2024-02-29 21:34:02] INFO [org.ehcache.core.EhcacheManager: 305] - Cache 'Pegas.entity.User' created in EhcacheManager.
+[2024-02-29 21:34:03] ERROR [org.hibernate.metamodel.internal.MetadataContext: 765] - HHH015007: Illegal argument on static metamodel field injection : org.hibernate.envers.DefaultRevisionEntity_#class_; expected type :  org.hibernate.metamodel.model.domain.internal.EntityTypeImpl; encountered type : jakarta.persistence.metamodel.MappedSuperclassType
+[2024-02-29 21:34:03] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 58] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)

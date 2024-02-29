@@ -2,6 +2,10 @@ package Pegas.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.OptimisticLockType;
+import org.hibernate.annotations.OptimisticLocking;
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.NotAudited;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,6 +17,8 @@ import java.util.Set;
 @EqualsAndHashCode(of ="nameCompany") //получается круг из-за set
 @ToString(exclude = "users")
 @Entity
+@Audited
+@OptimisticLocking(type = OptimisticLockType.VERSION)
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +28,7 @@ public class Company {
     @Builder.Default
     // mappedBy - поле в классе user, а joincolumn - столбец в таблице на который мапимся
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "company", orphanRemoval = true)
+    @NotAudited
     private Set<User> users = new HashSet<>();
 
     public void addUser(User user){

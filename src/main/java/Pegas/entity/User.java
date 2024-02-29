@@ -3,6 +3,7 @@ package Pegas.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.BatchSize;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.engine.internal.Cascade;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import java.util.List;
         name="WithCompanyAndChat",
         attributeNodes = {
                 @NamedAttributeNode("company"),
-                @NamedAttributeNode(value="UserChat", subgraph = "chats")
+                @NamedAttributeNode(value="userChats", subgraph = "chats")
         },
         subgraphs = {
                 @NamedSubgraph(name="chats", attributeNodes = @NamedAttributeNode("chat"))
@@ -30,6 +31,7 @@ import java.util.List;
 @Entity
 @EqualsAndHashCode(of = "username") //получается круг из-за set
 @Table(name = "users", schema = "public")
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "Users")
 //@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 //@Inheritance(strategy = InheritanceType.JOINED)
 //@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -58,8 +60,8 @@ public class User {
     private Payment payment;
     @Builder.Default
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL, mappedBy = "user")
-//    @BatchSize(size=5) для уменьшения числа подзапросов
     private List<UserChat> userChats = new ArrayList<>();
+    //    @BatchSize(size=5) для уменьшения числа подзапросов плохая практика
 
     /**
      * for ManyToMany

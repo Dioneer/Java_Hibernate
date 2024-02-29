@@ -72,6 +72,7 @@ created_by varchar(128) not null
 --drop table payment;
 create table payment(
 id bigserial primary key,
+version int,
 amount numeric(10,2) not null
 );]]></console>
     </connection>
@@ -80,7 +81,10 @@ amount numeric(10,2) not null
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" object-ref="schemas/public/tables/users" />
+      <object connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" object-ref="schemas/public/tables/payment" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="dddd66d9-3482-4925-89ef-397d4f1add91" />
