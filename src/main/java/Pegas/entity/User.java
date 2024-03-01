@@ -36,7 +36,7 @@ import java.util.List;
 //@Inheritance(strategy = InheritanceType.JOINED)
 //@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 //@DiscriminatorColumn(name="type")
-public class User {
+public class User implements BaseEntity<Long> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    @GeneratedValue(generator = "user_gen", strategy = GenerationType.SEQUENCE)

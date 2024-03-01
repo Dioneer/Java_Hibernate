@@ -1,11 +1,15 @@
 package Pegas;
 
 import Pegas.converter.BirthdayConvert;
+import Pegas.dao.CompanyRepository;
 import Pegas.dao.PaymentRepository;
 import Pegas.dao.UserDao;
-import Pegas.entity.Payment;
-import Pegas.entity.User;
-import Pegas.entity.UserChat;
+import Pegas.dao.UserRepository;
+import Pegas.dto.UserCreateDTO;
+import Pegas.entity.*;
+import Pegas.mapper.UserCreateMapper;
+import Pegas.mapper.UserReadMapper;
+import Pegas.service.UserService;
 import Pegas.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -14,6 +18,7 @@ import org.hibernate.graph.GraphSemantic;
 
 import java.lang.reflect.Proxy;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
@@ -28,13 +33,32 @@ public class HibernateRunner {
             Session session = (Session) Proxy.newProxyInstance(SessionFactory.class.getClassLoader(), new Class[]{Session.class},
                     ((proxy, method, args1) -> method.invoke(sessionFactory.getCurrentSession(),args1)));
             session.beginTransaction();
-            PaymentRepository paymentRepository = new PaymentRepository(session);
-            Payment payment = Payment.builder()
-                    .amount(new BigDecimal("105000"))
-                    .build();
-            Payment payment1 = paymentRepository.save(payment);
-            System.out.println(payment1);
-            paymentRepository.findBuId(2L).ifPresent(System.out::println);
+//            PaymentRepository paymentRepository = new PaymentRepository(session);
+//            Payment payment = Payment.builder()
+//                    .amount(new BigDecimal("105000"))
+//                    .build();
+//            Payment payment1 = paymentRepository.save(payment);
+//            System.out.println(payment1);
+//            paymentRepository.findBuId(2L).ifPresent(System.out::println);
+
+            var userReadMapper = new UserReadMapper();
+            var userRepository = new UserRepository(session);
+            UserService userService = new UserService(userRepository);
+            CompanyRepository companyRepository = new CompanyRepository(session);
+            UserCreateMapper userCreateMapper = new UserCreateMapper(companyRepository);
+//            userService.findUserId(1L).ifPresent(System.out::println);
+            UserCreateDTO userCreateDTO = new UserCreateDTO(
+                    PersonalInfo.builder()
+                            .firstname("Trust")
+                            .lastname("Popkov")
+                            .birthday(new Birthday(LocalDate.now()))
+                            .build(),
+                    "assn@ads.ru",
+                    Role.Admin,1L
+            );
+            userService.create(userCreateDTO);
+
+
             session.getTransaction().commit();
 
         }

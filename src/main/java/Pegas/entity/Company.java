@@ -20,7 +20,7 @@ import java.util.Set;
 @Audited
 @OptimisticLocking(type = OptimisticLockType.VERSION)
 @Table(name = "company", schema = "public")
-public class Company {
+public class Company implements BaseEntity<Long> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
