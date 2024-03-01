@@ -1,6 +1,7 @@
 package Pegas.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.*;
 import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -44,7 +45,6 @@ public class User implements BaseEntity<Long> {
     @Column(nullable = false, unique = true)
     private String username;
     @AttributeOverride(name = "birthday", column = @Column(name ="birthday"))
-    @Embedded
     private PersonalInfo personalInfo;
     @Enumerated(EnumType.STRING)
     private Role role;

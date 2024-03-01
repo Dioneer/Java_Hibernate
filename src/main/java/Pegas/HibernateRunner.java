@@ -43,17 +43,17 @@ public class HibernateRunner {
 
             var userReadMapper = new UserReadMapper();
             var userRepository = new UserRepository(session);
-            UserService userService = new UserService(userRepository);
             CompanyRepository companyRepository = new CompanyRepository(session);
             UserCreateMapper userCreateMapper = new UserCreateMapper(companyRepository);
+            UserService userService = new UserService(userRepository, userReadMapper, userCreateMapper);
 //            userService.findUserId(1L).ifPresent(System.out::println);
             UserCreateDTO userCreateDTO = new UserCreateDTO(
                     PersonalInfo.builder()
                             .firstname("Trust")
                             .lastname("Popkov")
-                            .birthday(new Birthday(LocalDate.now()))
+//                            .birthday(new Birthday(LocalDate.now()))
                             .build(),
-                    "assn@ads.ru",
+                    "ass12345n@ads.ru",
                     Role.Admin,1L
             );
             userService.create(userCreateDTO);
