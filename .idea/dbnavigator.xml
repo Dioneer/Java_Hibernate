@@ -84,7 +84,6 @@ amount numeric(10,2) not null
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
       <object connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" object-ref="schemas/public/tables/users" />
-      <object connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" object-ref="schemas/public/tables/company" />
       <object connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" object-ref="schemas/public/tables/payment" />
     </open-files>
   </component>
@@ -96,8 +95,8 @@ amount numeric(10,2) not null
     <filter-actions connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" dataset="public.company" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" dataset="public.profile" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" dataset="public.company_aud" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" dataset="public.my_table1" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" dataset="public.payment" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" dataset="public.my_table1" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" dataset="public.revinfo" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" dataset="public.users_chat" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="dddd66d9-3482-4925-89ef-397d4f1add91" dataset="public.my_table" active-filter-id="EMPTY_FILTER" />

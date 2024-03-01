@@ -17,7 +17,7 @@ import java.util.List;
 @ToString(exclude = "users")
 @Table(name = "payment", schema = "public")
 @OptimisticLocking(type = OptimisticLockType.VERSION)
-public class Payment {
+public class Payment implements BaseEntity<Long> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

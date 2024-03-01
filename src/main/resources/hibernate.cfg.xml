@@ -27,8 +27,10 @@
         <!--        for use test-->
         <!--        <property name="hibernate.hbm2ddl.auto">create</property>-->
         <property name="hibernate.hbm2ddl.auto">update</property>
-        <property name="hibernate.cache.region_prefix.factory_class">true</property>
+
+        <property name="hibernate.cache.use_second_level_cache">true</property>
         <property name="hibernate.cache.region_prefix.factory_class">org.hibernate.cache.jcache.internal.JCacheRegionFactory</property>
+        <property name="hibernate.current_session_context_class">thread</property>
 
         <mapping class="Pegas.entity.User"/>
         <mapping class="Pegas.entity.Company"/>

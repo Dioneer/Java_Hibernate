@@ -18,10 +18,10 @@ public class Profile {
     private String street;
     private String language;
 
-    public void setUser(User user){
-        this.user = user;
-        user.setProfile(this);
-        id = user.getId();
-    }
+//    public void setUser(User user){
+//        this.user = user;
+//        user.setProfile(this);
+//        id = user.getId();
+//    }
 
 }

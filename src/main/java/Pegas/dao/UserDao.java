@@ -70,9 +70,9 @@ public class UserDao {
                 .fetch();
     }
     public Double findAveragePaymentAmountByFirstAndLastName(Session session, PaymentFilter filter){
-            List<Predicate> predicates = new ArrayList<>();
-            if(filter.getFirstName() != null) predicates.add((user.personalInfo.firstname.eq(filter.getFirstName())));
-        if(filter.getLastName() != null) predicates.add(user.personalInfo.lastname.eq(filter.getLastName()));
+//            List<Predicate> predicates = new ArrayList<>();
+//            if(filter.getFirstName() != null) predicates.add((user.personalInfo.firstname.eq(filter.getFirstName())));
+//        if(filter.getLastName() != null) predicates.add(user.personalInfo.lastname.eq(filter.getLastName()));
         var predicate = QPredicate.builder()
                 .add(filter.getFirstName(), user.personalInfo.firstname::eq)
                 .add(filter.getLastName(), user.personalInfo.lastname::eq)

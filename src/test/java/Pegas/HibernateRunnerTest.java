@@ -3,6 +3,7 @@ package Pegas;
 import Pegas.entity.*;
 import Pegas.util.HibernateUtil;
 import jakarta.persistence.Column;
+import jakarta.persistence.LockModeType;
 import jakarta.persistence.Table;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.LockMode;
@@ -118,7 +119,7 @@ public class HibernateRunnerTest {
 //            Company company = Company.builder()
 //                    .nameCompany("Yandex")
 //                    .build();
-            Company company = session.get(Company.class,1L, LockMode.OPTIMISTIC);
+            Company company = session.find(Company.class,1L, LockModeType.OPTIMISTIC);
 //            нужен стобец version
 //            company.setNameCompany("Mom");
 //            session.flush();

@@ -53,8 +53,8 @@ public class User {
     @JoinColumn(name = "company_id")
     private Company company;
 //    при one to one все время будет идти запрос в профайл. Что бы прекратить, надо его тут закомментить и оставить только в профайле
-    @OneToOne(mappedBy = "user",cascade = CascadeType.REMOVE)
-    private Profile profile;
+//    @OneToOne(mappedBy = "user",cascade = CascadeType.REMOVE)
+//    private Profile profile;
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
     @JoinColumn(name = "payment_id")
     private Payment payment;
