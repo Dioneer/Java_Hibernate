@@ -19,15 +19,18 @@ import java.util.Set;
 @Entity
 @Audited
 @OptimisticLocking(type = OptimisticLockType.VERSION)
+@Table(name = "company", schema = "public")
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(unique = true, nullable = false, name = "nameCompany")
     private String nameCompany;
+    @Version
+    private Long version;
     @Builder.Default
     // mappedBy - поле в классе user, а joincolumn - столбец в таблице на который мапимся
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "company", orphanRemoval = true)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST, mappedBy = "company", orphanRemoval = true)
     @NotAudited
     private Set<User> users = new HashSet<>();
 

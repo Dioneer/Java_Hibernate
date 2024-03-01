@@ -64,7 +64,7 @@ public class HibernateRunnerTest {
             where u.personalInfo.firstname = :firstname
             and c.nameCompany = :namecompany
             """).setParameter("firstname", "Pavel")
-                    .setParameter("namecompany", "Yandex")
+                    .setParameter("namecompany", "Google")
                     .list();
             System.out.println(users);
             session.getTransaction().commit();
@@ -76,19 +76,19 @@ public class HibernateRunnerTest {
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
             Payment payment = Payment.builder()
-                    .amount(new BigDecimal("5500.25"))
+                    .amount(new BigDecimal("15500.25"))
                     .build();
-            Company company = session.get(Company.class,4);
+            Company company = Company.builder()
+                    .nameCompany("Google")
+                    .build();
            User user = User.builder()
-                   .username("ivanov139@gk.ru")
-                   .personalInfo(PersonalInfo.builder().firstname("Petr").lastname("Ivanov")
+                   .username("ivanov141@gk.ru")
+                   .personalInfo(PersonalInfo.builder().firstname("Pavel").lastname("Ivanov")
                            .birthday(new Birthday(LocalDate.of(2011,1,21))).build())
                    .company(company)
                    .payment(payment)
                    .role(Role.User)
                    .build();
-            session.persist(payment);
-           session.persist(company);
            session.persist(user);
            session.getTransaction().commit();
         }
@@ -115,9 +115,14 @@ public class HibernateRunnerTest {
         try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
-            Company company = session.get(Company.class, 4L, LockMode.OPTIMISTIC);
-//            company.setNameCompany("Onion");
+//            Company company = Company.builder()
+//                    .nameCompany("Yandex")
+//                    .build();
+            Company company = session.get(Company.class,1L, LockMode.OPTIMISTIC);
 //            нужен стобец version
+//            company.setNameCompany("Mom");
+//            session.flush();
+//            session.persist(company);
             System.out.println(company);
             session.getTransaction().commit();
         }
@@ -156,8 +161,8 @@ public class HibernateRunnerTest {
         try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
-            User user = session.get(User.class, 13);
-            session.remove(user);
+            User user = session.get(User.class, 4);
+//            session.remove(user);
             session.getTransaction().commit();
         }
     }
@@ -191,10 +196,10 @@ public class HibernateRunnerTest {
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
             Company company = Company.builder()
-                    .nameCompany("VTB")
+                    .nameCompany("Akado")
                     .build();
             User user = User.builder()
-                    .username("tech04@mail.ru")
+                    .username("tech05@mail.ru")
                     .company(company)
                     .build();
             company.addUser(user);

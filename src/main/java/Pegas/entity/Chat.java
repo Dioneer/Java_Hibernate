@@ -18,7 +18,7 @@ public class Chat implements BaseEntity<Long> {
     @Column(unique = true, nullable = false, name = "chatName")
     private String name;
 //    @Builder.Default
-//    @ManyToMany(mappedBy = "chat")
+//    @ManyToMany(mappedBy = "chats")
 //    private List<User> users = new ArrayList<>();
     @Builder.Default
     @OneToMany(mappedBy = "chat")

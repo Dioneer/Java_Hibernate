@@ -1,10 +1,7 @@
 package Pegas.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.OptimisticLockType;
 import org.hibernate.annotations.OptimisticLocking;
 
@@ -17,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Entity
+@ToString(exclude = "users")
 @Table(name = "payment", schema = "public")
 @OptimisticLocking(type = OptimisticLockType.VERSION)
 public class Payment {

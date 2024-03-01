@@ -68,8 +68,9 @@ public class UserDaoTest {
         try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
-            List<User> results = userDao.findAllByCompanyName(session, "Yandex");
+            List<User> results = userDao.findAllByCompanyName(session, "Google");
             assertThat(results).hasSize(1);
+            System.out.println(results);
             session.getTransaction().commit();
         }
     }

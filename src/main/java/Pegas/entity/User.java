@@ -49,17 +49,17 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 //    optional меняет left join to inner join
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
     @JoinColumn(name = "company_id")
     private Company company;
 //    при one to one все время будет идти запрос в профайл. Что бы прекратить, надо его тут закомментить и оставить только в профайле
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user",cascade = CascadeType.REMOVE)
     private Profile profile;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
     @JoinColumn(name = "payment_id")
     private Payment payment;
     @Builder.Default
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST, mappedBy = "user")
     private List<UserChat> userChats = new ArrayList<>();
     //    @BatchSize(size=5) для уменьшения числа подзапросов плохая практика
 

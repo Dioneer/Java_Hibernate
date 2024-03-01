@@ -29,7 +29,7 @@
         <property name="format_sql">true</property>
         <!--        for use test -->
 <!--        <property name="hibernate.hbm2ddl.auto">create</property>-->
-<!--        <property name="hibernate.hbm2ddl.auto">update</property>-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!--    Create a database as needed after drop -->
         <!--    <property name="hbm2ddl.auto">create</property>-->

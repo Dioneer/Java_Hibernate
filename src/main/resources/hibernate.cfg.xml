@@ -26,7 +26,7 @@
         <property name="format_sql">true</property>
         <!--        for use test-->
         <!--        <property name="hibernate.hbm2ddl.auto">create</property>-->
-        <!--        <property name="hibernate.hbm2ddl.auto">update</property>-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.cache.region_prefix.factory_class">true</property>
         <property name="hibernate.cache.region_prefix.factory_class">org.hibernate.cache.jcache.internal.JCacheRegionFactory</property>
 
