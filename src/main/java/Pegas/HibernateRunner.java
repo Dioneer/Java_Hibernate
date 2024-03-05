@@ -16,6 +16,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.graph.GraphSemantic;
 
+import java.io.InputStream;
 import java.lang.reflect.Proxy;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -51,9 +52,9 @@ public class HibernateRunner {
                     PersonalInfo.builder()
                             .firstname("Trust")
                             .lastname("Popkov")
-//                            .birthday(new Birthday(LocalDate.now()))
+                            .birthday(new Birthday(LocalDate.now()))
                             .build(),
-                    "ass12345n@ads.ru",
+                    "ass12347n@ads.ru",
                     Role.Admin,1L
             );
             userService.create(userCreateDTO);

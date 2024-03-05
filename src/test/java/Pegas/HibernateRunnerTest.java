@@ -26,34 +26,34 @@ import java.util.stream.Collectors;
 @Slf4j
 public class HibernateRunnerTest {
 //    this test doesn't work because of change
-    @Test
-    public void testUnderIngine() throws SQLException, IllegalAccessException {
-        User user = User.builder()
-                .username("ivanov125@gk.ru")
-//                .personalInfo(PersonalInfo.builder().firstname("Ivan").lastname("Ivanov")
-//                        .birthday(new Birthday(LocalDate.of(2011,1,21))).build())
-//                .role(Role.User)
-                .build();
-        var sql = """
-                insert into %s (%s) values(%s)
-                """;
-        String userClass = Optional.ofNullable(user.getClass().getAnnotation(Table.class))
-                .map(i->i.schema()+"."+i.name()).orElse(user.getClass().getName());
-        Field[] fields = user.getClass().getDeclaredFields();
-        String userAttr = Arrays.stream(fields).map(i->Optional.ofNullable(i.getAnnotation(Column.class))
-                .map(Column::name)
-                .orElse(i.getName())).collect(Collectors.joining(","));
-        String question = Arrays.stream(fields).map(i->"?").collect(Collectors.joining(","));
-        Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "123456");
-        PreparedStatement preparedStatement = connection.prepareStatement(sql.formatted(userClass, userAttr, question));
-        for(int i = 0; i< fields.length; i++){
-            fields[i].setAccessible(true);
-            preparedStatement.setObject(i+1,fields[i].get(user));
-        }
-        System.out.println(preparedStatement);
-        preparedStatement.execute();
-        connection.close();
-    }
+//    @Test
+//    public void testUnderIngine() throws SQLException, IllegalAccessException {
+//        User user = User.builder()
+//                .username("ivanov125@gk.ru")
+////                .personalInfo(PersonalInfo.builder().firstname("Ivan").lastname("Ivanov")
+////                        .birthday(new Birthday(LocalDate.of(2011,1,21))).build())
+////                .role(Role.User)
+//                .build();
+//        var sql = """
+//                insert into %s (%s) values(%s)
+//                """;
+//        String userClass = Optional.ofNullable(user.getClass().getAnnotation(Table.class))
+//                .map(i->i.schema()+"."+i.name()).orElse(user.getClass().getName());
+//        Field[] fields = user.getClass().getDeclaredFields();
+//        String userAttr = Arrays.stream(fields).map(i->Optional.ofNullable(i.getAnnotation(Column.class))
+//                .map(Column::name)
+//                .orElse(i.getName())).collect(Collectors.joining(","));
+//        String question = Arrays.stream(fields).map(i->"?").collect(Collectors.joining(","));
+//        Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "123456");
+//        PreparedStatement preparedStatement = connection.prepareStatement(sql.formatted(userClass, userAttr, question));
+//        for(int i = 0; i< fields.length; i++){
+//            fields[i].setAccessible(true);
+//            preparedStatement.setObject(i+1,fields[i].get(user));
+//        }
+//        System.out.println(preparedStatement);
+//        preparedStatement.execute();
+//        connection.close();
+//    }
     @Test
     public void checkHQL(){
         try(SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
