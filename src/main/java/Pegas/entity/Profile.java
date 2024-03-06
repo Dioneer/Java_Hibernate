@@ -12,7 +12,7 @@ public class Profile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "user_id")
     private User user;
     private String street;
@@ -21,7 +21,6 @@ public class Profile {
 //    public void setUser(User user){
 //        this.user = user;
 //        user.setProfile(this);
-//        id = user.getId();
 //    }
 
 }

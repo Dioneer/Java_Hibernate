@@ -247,8 +247,8 @@ public class HibernateRunnerTest {
                     .chat(chat)
                     .user(user)
                     .build();
-            userChat.setCreteAt(Instant.now());
-            userChat.setCreateBy("Maxim");
+            userChat.setCreated_at(Instant.now());
+            userChat.setCreated_by("Maxim");
             userChat.setChat(chat);
             userChat.setUser(user);
             session.persist(userChat);
