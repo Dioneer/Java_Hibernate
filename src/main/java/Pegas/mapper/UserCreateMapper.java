@@ -14,7 +14,7 @@ public class UserCreateMapper implements Mapper<UserCreateDTO, User>{
                 .personalInfo(object.personalInfo())
                 .username(object.username())
                 .role(object.role())
-                .company(companyRepository.findBuId(object.companyId()).orElseThrow(IllegalArgumentException::new))
+                .company(companyRepository.findBuId(object.companyId()).orElseThrow(null))
                 .build();
     }
 }

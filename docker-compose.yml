@@ -4,12 +4,13 @@ services:
   postgres:
     image: postgres
     restart: always
-    container_name: hibernate-postgres
+    container_name: postgres
     environment:
       POSTGRES_PASSWORD: 123456
       POSTGRES_USER: postgres
     ports:
       - '5432:5432'
+
   app:
     image: 'hibernate'
     container_name: 'HibernateStart.app'
@@ -19,5 +20,4 @@ services:
     depends_on:
       - postgres
     ports:
-      - '8080:8080'
-
+      - '8081:8081'

@@ -5813,3 +5813,187 @@ Caused by: org.postgresql.util.PSQLException: ОШИБКА: столбец p1_0.
 [2024-03-07 00:06:12] INFO [org.hibernate.orm.connections.access: 52] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@18a0721b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 [2024-03-07 00:08:38] INFO [org.ehcache.core.EhcacheManager: 216] - Cache 'Users' removed from EhcacheManager.
 [2024-03-07 00:08:38] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-03-07 15:06:23] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-03-07 15:06:23] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 53] - HHH000025: Second-level cache region factory [org.hibernate.cache.jcache.internal.JCacheRegionFactory]
+[2024-03-07 15:06:24] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-03-07 15:06:24] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-03-07 15:06:24] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-03-07 15:06:24] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-03-07 15:06:24] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-03-07 15:06:24] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-03-07 15:06:24] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-03-07 15:06:25] INFO [org.hibernate.envers.boot.internal.EnversServiceImpl: 76] - Envers integration enabled? : true
+[2024-03-07 15:06:25] INFO [org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator: 322] - Adding properties for entity: Pegas.entity.Company
+[2024-03-07 15:06:26] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-03-07 15:06:26] INFO [org.hibernate.service.internal.AbstractServiceRegistryImpl: 388] - HHH000369: Error stopping service [class org.hibernate.cache.jcache.internal.JCacheRegionFactory]
+java.lang.NullPointerException: Cannot invoke "javax.cache.CacheManager.close()" because "this.cacheManager" is null
+	at org.hibernate.cache.jcache.internal.JCacheRegionFactory.releaseFromUse(JCacheRegionFactory.java:288)
+	at org.hibernate.cache.spi.AbstractRegionFactory.stop(AbstractRegionFactory.java:111)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.stopService(AbstractServiceRegistryImpl.java:385)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.destroy(AbstractServiceRegistryImpl.java:366)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.destroy(StandardServiceRegistryImpl.java:142)
+	at org.hibernate.service.spi.ServiceRegistryImplementor.close(ServiceRegistryImplementor.java:32)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:963)
+	at Pegas.HibernateRunner.main(HibernateRunner.java:35)
+[2024-03-07 16:19:56] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-03-07 16:19:57] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-03-07 16:19:57] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-03-07 16:19:57] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-03-07 16:19:57] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://postgres:5432/postgres]
+[2024-03-07 16:19:57] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-03-07 16:19:57] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-03-07 16:19:57] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-03-07 16:19:59] WARN [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator: 345] - HHH000342: Could not obtain connection to query metadata
+java.lang.IllegalStateException: Cannot get a connection as the driver manager is not properly initialized
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:259)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:428)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:276)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:52)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:136)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.convertSqlException(BasicConnectionCreator.java:132)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:43)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:61)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.addConnections(DriverManagerConnectionProviderImpl.java:499)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:372)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections$Builder.build(DriverManagerConnectionProviderImpl.java:550)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:102)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:82)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:136)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:247)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:395)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:262)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:129)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:449)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:910)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:960)
+	at Pegas.util.HibernateUtil.buildSessionFactory(HibernateUtil.java:17)
+	at Pegas.HibernateRunner.main(HibernateRunner.java:31)
+[2024-03-07 16:19:59] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-03-07 16:19:59] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 145] - SQL Error: 0, SQLState: 08001
+[2024-03-07 16:19:59] ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 150] - Ошибка при попытке подсоединения.
+[2024-03-07 16:20:34] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-03-07 16:20:35] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] - HHH000026: Second-level cache disabled
+[2024-03-07 16:20:35] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-03-07 16:20:35] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-03-07 16:20:35] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-03-07 16:20:35] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-03-07 16:20:35] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-03-07 16:20:35] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-03-07 16:20:35] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-03-07 16:20:35] INFO [org.hibernate.envers.boot.internal.EnversServiceImpl: 76] - Envers integration enabled? : true
+[2024-03-07 16:20:36] INFO [org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator: 322] - Adding properties for entity: Pegas.entity.Company
+[2024-03-07 16:20:36] INFO [org.hibernate.validator.internal.util.Version: 21] - HV000001: Hibernate Validator 8.0.1.Final
+[2024-03-07 16:20:38] ERROR [org.hibernate.metamodel.internal.MetadataContext: 765] - HHH015007: Illegal argument on static metamodel field injection : org.hibernate.envers.DefaultRevisionEntity_#class_; expected type :  org.hibernate.metamodel.model.domain.internal.EntityTypeImpl; encountered type : jakarta.persistence.metamodel.MappedSuperclassType
+[2024-03-07 16:20:38] INFO [org.hibernate.orm.connections.access: 52] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2d73e8c4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2024-03-07 16:20:39] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-03-07 19:06:22] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-03-07 19:06:23] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 53] - HHH000025: Second-level cache region factory [org.hibernate.cache.jcache.internal.JCacheRegionFactory]
+[2024-03-07 19:06:23] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-03-07 19:06:23] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-03-07 19:06:23] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-03-07 19:06:23] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-03-07 19:06:23] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-03-07 19:06:23] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-03-07 19:06:24] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-03-07 19:06:24] INFO [org.hibernate.envers.boot.internal.EnversServiceImpl: 76] - Envers integration enabled? : true
+[2024-03-07 19:06:24] INFO [org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator: 322] - Adding properties for entity: Pegas.entity.Company
+[2024-03-07 19:06:25] INFO [org.hibernate.validator.internal.util.Version: 21] - HV000001: Hibernate Validator 8.0.1.Final
+[2024-03-07 19:06:26] WARN [org.hibernate.orm.cache: 108] - HHH90001006: Missing cache[Users] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2024-03-07 19:06:26] INFO [org.ehcache.core.EhcacheManager: 305] - Cache 'Users' created in EhcacheManager.
+[2024-03-07 19:06:27] ERROR [org.hibernate.metamodel.internal.MetadataContext: 765] - HHH015007: Illegal argument on static metamodel field injection : org.hibernate.envers.DefaultRevisionEntity_#class_; expected type :  org.hibernate.metamodel.model.domain.internal.EntityTypeImpl; encountered type : jakarta.persistence.metamodel.MappedSuperclassType
+[2024-03-07 19:06:27] INFO [org.hibernate.orm.connections.access: 52] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2382b2f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2024-03-07 19:06:28] INFO [org.ehcache.core.EhcacheManager: 216] - Cache 'Users' removed from EhcacheManager.
+[2024-03-07 19:06:28] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-03-07 19:13:23] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-03-07 19:13:23] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 53] - HHH000025: Second-level cache region factory [org.hibernate.cache.jcache.internal.JCacheRegionFactory]
+[2024-03-07 19:13:23] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-03-07 19:13:23] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-03-07 19:13:23] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-03-07 19:13:23] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-03-07 19:13:23] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-03-07 19:13:23] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-03-07 19:13:24] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-03-07 19:13:24] INFO [org.hibernate.envers.boot.internal.EnversServiceImpl: 76] - Envers integration enabled? : true
+[2024-03-07 19:13:24] INFO [org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator: 322] - Adding properties for entity: Pegas.entity.Company
+[2024-03-07 19:13:25] INFO [org.hibernate.validator.internal.util.Version: 21] - HV000001: Hibernate Validator 8.0.1.Final
+[2024-03-07 19:13:25] WARN [org.hibernate.orm.cache: 108] - HHH90001006: Missing cache[Users] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2024-03-07 19:13:25] INFO [org.ehcache.core.EhcacheManager: 305] - Cache 'Users' created in EhcacheManager.
+[2024-03-07 19:13:26] ERROR [org.hibernate.metamodel.internal.MetadataContext: 765] - HHH015007: Illegal argument on static metamodel field injection : org.hibernate.envers.DefaultRevisionEntity_#class_; expected type :  org.hibernate.metamodel.model.domain.internal.EntityTypeImpl; encountered type : jakarta.persistence.metamodel.MappedSuperclassType
+[2024-03-07 19:13:26] INFO [org.hibernate.orm.connections.access: 52] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@13374ca6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2024-03-07 19:13:27] INFO [org.ehcache.core.EhcacheManager: 216] - Cache 'Users' removed from EhcacheManager.
+[2024-03-07 19:13:27] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-03-07 19:30:19] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-03-07 19:30:19] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 53] - HHH000025: Second-level cache region factory [org.hibernate.cache.jcache.internal.JCacheRegionFactory]
+[2024-03-07 19:30:20] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-03-07 19:30:20] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-03-07 19:30:20] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-03-07 19:30:20] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-03-07 19:30:20] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-03-07 19:30:20] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-03-07 19:30:20] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-03-07 19:30:20] INFO [org.hibernate.envers.boot.internal.EnversServiceImpl: 76] - Envers integration enabled? : true
+[2024-03-07 19:30:21] INFO [org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator: 322] - Adding properties for entity: Pegas.entity.Company
+[2024-03-07 19:30:21] INFO [org.hibernate.validator.internal.util.Version: 21] - HV000001: Hibernate Validator 8.0.1.Final
+[2024-03-07 19:30:21] WARN [org.hibernate.orm.cache: 108] - HHH90001006: Missing cache[Users] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2024-03-07 19:30:22] INFO [org.ehcache.core.EhcacheManager: 305] - Cache 'Users' created in EhcacheManager.
+[2024-03-07 19:30:23] ERROR [org.hibernate.metamodel.internal.MetadataContext: 765] - HHH015007: Illegal argument on static metamodel field injection : org.hibernate.envers.DefaultRevisionEntity_#class_; expected type :  org.hibernate.metamodel.model.domain.internal.EntityTypeImpl; encountered type : jakarta.persistence.metamodel.MappedSuperclassType
+[2024-03-07 19:30:23] INFO [org.hibernate.orm.connections.access: 52] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@65262308] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2024-03-07 19:30:24] INFO [org.ehcache.core.EhcacheManager: 216] - Cache 'Users' removed from EhcacheManager.
+[2024-03-07 19:30:24] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-03-07 19:36:19] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-03-07 19:36:20] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 53] - HHH000025: Second-level cache region factory [org.hibernate.cache.jcache.internal.JCacheRegionFactory]
+[2024-03-07 19:36:20] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-03-07 19:36:20] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-03-07 19:36:20] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-03-07 19:36:20] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-03-07 19:36:20] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-03-07 19:36:20] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-03-07 19:36:20] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-03-07 19:36:20] INFO [org.hibernate.envers.boot.internal.EnversServiceImpl: 76] - Envers integration enabled? : true
+[2024-03-07 19:36:21] INFO [org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator: 322] - Adding properties for entity: Pegas.entity.Company
+[2024-03-07 19:36:21] INFO [org.hibernate.validator.internal.util.Version: 21] - HV000001: Hibernate Validator 8.0.1.Final
+[2024-03-07 19:36:22] WARN [org.hibernate.orm.cache: 108] - HHH90001006: Missing cache[Users] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2024-03-07 19:36:22] INFO [org.ehcache.core.EhcacheManager: 305] - Cache 'Users' created in EhcacheManager.
+[2024-03-07 19:36:23] ERROR [org.hibernate.metamodel.internal.MetadataContext: 765] - HHH015007: Illegal argument on static metamodel field injection : org.hibernate.envers.DefaultRevisionEntity_#class_; expected type :  org.hibernate.metamodel.model.domain.internal.EntityTypeImpl; encountered type : jakarta.persistence.metamodel.MappedSuperclassType
+[2024-03-07 19:36:23] INFO [org.hibernate.orm.connections.access: 52] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@65262308] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2024-03-07 19:36:24] INFO [org.ehcache.core.EhcacheManager: 216] - Cache 'Users' removed from EhcacheManager.
+[2024-03-07 19:36:24] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[2024-03-07 20:08:13] INFO [org.hibernate.Version: 44] - HHH000412: Hibernate ORM core version 6.4.4.Final
+[2024-03-07 20:08:14] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 53] - HHH000025: Second-level cache region factory [org.hibernate.cache.jcache.internal.JCacheRegionFactory]
+[2024-03-07 20:08:14] WARN [org.hibernate.orm.connections.pooling: 81] - HHH10001002: Using built-in connection pool (not intended for production use)
+[2024-03-07 20:08:14] INFO [org.hibernate.orm.connections.pooling: 136] - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[2024-03-07 20:08:14] INFO [org.hibernate.orm.connections.pooling: 158] - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[2024-03-07 20:08:14] INFO [org.hibernate.orm.connections.pooling: 167] - HHH10001001: Connection properties: {password=****, user=postgres}
+[2024-03-07 20:08:14] INFO [org.hibernate.orm.connections.pooling: 171] - HHH10001003: Autocommit mode: false
+[2024-03-07 20:08:14] INFO [org.hibernate.orm.connections.pooling: 371] - HHH10001115: Connection pool size: 20 (min=1)
+[2024-03-07 20:08:14] WARN [org.hibernate.orm.deprecation: 153] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2024-03-07 20:08:15] INFO [org.hibernate.envers.boot.internal.EnversServiceImpl: 76] - Envers integration enabled? : true
+[2024-03-07 20:08:15] INFO [org.hibernate.envers.configuration.internal.metadata.AuditMetadataGenerator: 322] - Adding properties for entity: Pegas.entity.Company
+[2024-03-07 20:08:16] INFO [org.hibernate.validator.internal.util.Version: 21] - HV000001: Hibernate Validator 8.0.1.Final
+[2024-03-07 20:08:16] WARN [org.hibernate.orm.cache: 108] - HHH90001006: Missing cache[Users] was created on-the-fly. The created cache will use a provider-specific default configuration: make sure you defined one. You can disable this warning by setting 'hibernate.javax.cache.missing_cache_strategy' to 'create'.
+[2024-03-07 20:08:16] INFO [org.ehcache.core.EhcacheManager: 305] - Cache 'Users' created in EhcacheManager.
+[2024-03-07 20:08:18] ERROR [org.hibernate.metamodel.internal.MetadataContext: 765] - HHH015007: Illegal argument on static metamodel field injection : org.hibernate.envers.DefaultRevisionEntity_#class_; expected type :  org.hibernate.metamodel.model.domain.internal.EntityTypeImpl; encountered type : jakarta.persistence.metamodel.MappedSuperclassType
+[2024-03-07 20:08:18] INFO [org.hibernate.orm.connections.access: 52] - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3a5ce4b8] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[2024-03-07 20:08:19] INFO [org.ehcache.core.EhcacheManager: 216] - Cache 'Users' removed from EhcacheManager.
+[2024-03-07 20:08:19] INFO [org.hibernate.orm.connections.pooling: 606] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]

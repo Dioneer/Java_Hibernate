@@ -7,6 +7,7 @@ import Pegas.dao.UserDao;
 import Pegas.dao.UserRepository;
 import Pegas.dto.UserCreateDTO;
 import Pegas.entity.*;
+import Pegas.mapper.CompanyReadMapper;
 import Pegas.mapper.UserCreateMapper;
 import Pegas.mapper.UserReadMapper;
 import Pegas.service.UserService;
@@ -27,12 +28,8 @@ import java.util.Map;
 @Slf4j
 public class HibernateRunner {
     public static void main(String[] args) {
-        Configuration configuration = new Configuration();
-        configuration.configure();
-        configuration.addAttributeConverter(new BirthdayConvert(), true);
         final UserDao userDao = UserDao.getINSTANCE();
-        User results =null;
-        try (SessionFactory sessionFactory = configuration.buildSessionFactory()) {
+        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory()) {
             try (Session session = (Session) Proxy.newProxyInstance(SessionFactory.class.getClassLoader(), new Class[]{Session.class},
                     ((proxy, method, args1) -> method.invoke(sessionFactory.getCurrentSession(),args1)))) {
                 session.beginTransaction();
@@ -43,10 +40,14 @@ public class HibernateRunner {
 //            Payment payment1 = paymentRepository.save(payment);
 //            System.out.println(payment1);
 //            paymentRepository.findBuId(2L).ifPresent(System.out::println);
-
-                var userReadMapper = new UserReadMapper();
-                var userRepository = new UserRepository(session);
                 CompanyRepository companyRepository = new CompanyRepository(session);
+                Company company = Company.builder()
+                        .nameCompany("NewDay")
+                        .build();
+                companyRepository.save(company);
+                var companyReadMapper = new CompanyReadMapper();
+                var userReadMapper = new UserReadMapper(companyReadMapper);
+                var userRepository = new UserRepository(session);
                 UserCreateMapper userCreateMapper = new UserCreateMapper(companyRepository);
                 UserService userService = new UserService(userRepository, userReadMapper, userCreateMapper);
 //            userService.findUserId(1L).ifPresent(System.out::println);
@@ -56,24 +57,28 @@ public class HibernateRunner {
                                 .lastname("Popkov")
                                 .birthday(new Birthday(LocalDate.now()))
                                 .build(),
-                        "ass12359n@ads.ru",
+                        "ass12362n@ads.ru",
                         Role.Admin, 1L
                 );
                 userService.create(userCreateDTO);
                 session.getTransaction().commit();
             }
 
-            try (Session session1 = sessionFactory.openSession()) {
-                assert session1 != null;
+            try (Session session1 = (Session) Proxy.newProxyInstance(SessionFactory.class.getClassLoader(), new Class[]{Session.class},
+                    ((proxy, method, args1) -> method.invoke(sessionFactory.getCurrentSession(),args1)))) {
                 session1.beginTransaction();
-                var results2 = session1.find(User.class, 1L);
+                List<User> results= userDao.findAll(session1);
+                var user = session1.find(User.class, 1L);
+                var company = user.getCompany();
+                System.out.println(user +" "+company);
+//                var results2 = session1.find(User.class, 1L);
 //                var userGraph = session1.createEntityGraph(User.class);
 //                userGraph.addAttributeNodes("company", "userChats");
 //                var userChatSubgraph = userGraph.addSubgraph("userChats", UserChat.class);
 //                userChatSubgraph.addAttributeNodes("chat");
 //                Map<String,Object> prop = Map.of(GraphSemantic.LOAD.getJakartaHintName(),userGraph);
 //                var user = session1.find(User.class, 1L, prop);
-                System.out.println(results2);
+//                System.out.println(results2);
                 session1.getTransaction().commit();
 
             }

@@ -60,7 +60,7 @@ public class HibernateRunnerTest {
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
             var users = session.createQuery("""
-            select u from User u
+            select u from User u 
             join u.company c
             where u.personalInfo.firstname = :firstname
             and c.nameCompany = :namecompany
