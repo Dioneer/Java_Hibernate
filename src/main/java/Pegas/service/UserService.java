@@ -10,6 +10,7 @@ import Pegas.mapper.UserReadMapper;
 import jakarta.validation.*;
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -37,5 +38,25 @@ public class UserService {
         User userEntity = userCreateMapper.mapFrom(userCreateDTO);
         return userRepository.save(userEntity).getId();
     }
-
+    public void update(UserCreateDTO userCreateDTO){
+        List<User> arr = userRepository.findAll();
+        User findUser = null;
+        for (User i : arr){
+            if(i.getUsername().equals(userCreateDTO.username())) {
+                findUser = i;
+            }
+        }
+        User userUpdate = userCreateMapper.mapFrom(userCreateDTO);
+        assert findUser != null;
+        if(!findUser.getUsername().equals(userUpdate.getUsername())){
+           findUser.setUsername(userUpdate.getUsername());
+       }
+       if(!findUser.getCompany().equals(userUpdate.getCompany())){
+            findUser.setCompany(userUpdate.getCompany());
+        }
+        if(!findUser.getPersonalInfo().getFirstname().equals(userUpdate.getPersonalInfo().getFirstname())){
+            findUser.setPersonalInfo(userUpdate.getPersonalInfo());
+        }
+        userRepository.update(findUser);
+    }
 }

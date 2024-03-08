@@ -41,36 +41,46 @@ public class HibernateRunner {
 //            System.out.println(payment1);
 //            paymentRepository.findBuId(2L).ifPresent(System.out::println);
                 CompanyRepository companyRepository = new CompanyRepository(session);
-                Company company = Company.builder()
-                        .nameCompany("NewDay")
-                        .build();
-                companyRepository.save(company);
+//                Company company = Company.builder()
+//                        .nameCompany("Startt")
+//                        .build();
+//                companyRepository.save(company);
                 var companyReadMapper = new CompanyReadMapper();
                 var userReadMapper = new UserReadMapper(companyReadMapper);
                 var userRepository = new UserRepository(session);
                 UserCreateMapper userCreateMapper = new UserCreateMapper(companyRepository);
                 UserService userService = new UserService(userRepository, userReadMapper, userCreateMapper);
 //            userService.findUserId(1L).ifPresent(System.out::println);
-                UserCreateDTO userCreateDTO = new UserCreateDTO(
+//                UserCreateDTO userCreateDTO = new UserCreateDTO(
+//                        PersonalInfo.builder()
+//                                .firstname("Trust")
+//                                .lastname("Popkov")
+//                                .birthday(new Birthday(LocalDate.now()))
+//                                .build(),
+//                        "ass12363n@ads.ru",
+//                        Role.Admin, 1L
+//                );
+//                userService.create(userCreateDTO);
+                UserCreateDTO userCreateDTO1 = new UserCreateDTO(
                         PersonalInfo.builder()
-                                .firstname("Trust")
-                                .lastname("Popkov")
+                                .firstname("Trustt")
+                                .lastname("Popkovv")
                                 .birthday(new Birthday(LocalDate.now()))
                                 .build(),
-                        "ass12362n@ads.ru",
+                        "ass12361n@ads.ru",
                         Role.Admin, 1L
                 );
-                userService.create(userCreateDTO);
+                userService.update(userCreateDTO1);
                 session.getTransaction().commit();
             }
 
             try (Session session1 = (Session) Proxy.newProxyInstance(SessionFactory.class.getClassLoader(), new Class[]{Session.class},
                     ((proxy, method, args1) -> method.invoke(sessionFactory.getCurrentSession(),args1)))) {
                 session1.beginTransaction();
-                List<User> results= userDao.findAll(session1);
-                var user = session1.find(User.class, 1L);
-                var company = user.getCompany();
-                System.out.println(user +" "+company);
+//                List<User> results= userDao.findAll(session1);
+//                var user = session1.find(User.class, 1L);
+//                var company = user.getCompany();
+//                System.out.println(user +" "+company);
 //                var results2 = session1.find(User.class, 1L);
 //                var userGraph = session1.createEntityGraph(User.class);
 //                userGraph.addAttributeNodes("company", "userChats");

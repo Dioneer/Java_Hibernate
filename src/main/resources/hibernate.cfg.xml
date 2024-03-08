@@ -11,7 +11,7 @@
         <!--    Postgresql password  -->
         <property name="connection.password">123456</property>
         <!--    Postgresql connectionURL  -->
-        <property name="connection.url">jdbc:postgresql://postgres:5432/postgres</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/postgres</property>
         <!--    Database dialect  -->
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <!--    Display SQL statement  -->
